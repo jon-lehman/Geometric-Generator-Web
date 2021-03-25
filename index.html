@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self'">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Geometric Illustration Generator Vol. 1</title>
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./launchpad.css">
+
+    <script src='./panzoom.js'></script>
+    <script src='./saveSvgAsPng.js'></script>
+
+</head>
+
+<body>
+    <div class="drag"></div>
+    <h1>Geometric Generator Vol. 1</h1>
+    <p>Choose an illustration style below to get started generating your unique geometric illustration.</p>
+    <div class="pattern-category">
+        <p class="pattern-category-title">Circles</p>
+        <div class="pattern-wrap">
+            <div id="selectRetro" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #F0F2F3">
+                <img src="./img/example_retro.svg">
+                <p>Retro</p>
+            </div>
+            <div id="selectCollage" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #FFCAB3">
+                <img src="./img/example_collage.svg">
+                <p>Collage</p>
+            </div>
+            <div id="selectRiseAndSet" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #FFFFFF">
+                <img src="./img/example_riseAndSet.svg">
+                <p>Rise & Set</p>
+            </div>
+            <div id="selectHourGlass" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #796EFF">
+                <img src="./img/example_hourGlass.svg">
+                <p>Hour Glass</p>
+            </div>
+            <div id="selectCircuits" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #F0F2F3">
+                <img src="./img/example_circuits.svg">
+                <p>Circuits</p>
+            </div>
+            <div id="selectDotGrid" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #FFCAB3">
+                <img src="./img/example_dotGrid.svg">
+                <p>Dot Grid</p>
+            </div>
+            <div id="selectStigma" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #F0F2F3">
+                <img src="./img/example_stigma.png">
+                <p>Stigma</p>
+            </div>
+        </div>
+    </div>
+    <div class="pattern-category">
+        <p class="pattern-category-title">Squares</p>
+        <div class="pattern-wrap">
+            <div id="selectModgePodge" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #9BE3AB">
+                <img src="./img/example_modgePodge.png">
+                <p>Modge Podge</p>
+            </div>
+            <div id="selectSquareGrid" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #4CC6B2">
+                <img src="./img/example_squareGrid.svg">
+                <p>Square Grid</p>
+            </div>
+            <div id="selectChiseled" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #3C4D66">
+                <img src="./img/example_chiseled.png">
+                <p style="color: white;">Chiseled</p>
+            </div>
+            <div id="selectStairs" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #F1F0F2">
+                <img src="./img/example_stairs.png">
+                <p>Stairs</p>
+            </div>
+            <div id="selectIslands" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #65578E;">
+                <img src="./img/example_islands.png">
+                <p style="color: white">Islands</p>
+            </div>
+            <div id="selectAlienLanguage" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #F1F0F2;">
+                <img src="./img/example_alienLanguage.png">
+                <p>Alien Language</p>
+            </div>
+            <div id="selectCrossGrid" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #3C4D66;">
+                <img src="./img/example_crossGrid.svg">
+                <p style="color: white">Cross Grid</p>
+            </div>
+            <div id="selectConfetti" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #65578E;">
+                <img src="./img/example_confetti.png">
+                <p style="color: white">Confetti</p>
+            </div>
+        </div>
+    </div>
+    <div class="pattern-category">
+        <p class="pattern-category-title">Vintage</p>
+        <div class="pattern-wrap">
+            <div id="selectWallArt" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #F19A00;">
+                <img src="./img/example_wallArt.svg">
+                <p>Wall Art</p>
+            </div>
+            <div id="selectTerrazzo" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #6E9E80;">
+                <img src="./img/example_terrazzo.svg">
+                <p>Terrazzo</p>
+            </div>
+            <div id="selectKnickKnacks" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #D6CFB6;">
+                <img src="./img/example_knickKnacks.svg">
+                <p>Knick Knacks</p>
+            </div>
+            <div id="selectStreamers" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #482728;">
+                <img src="./img/example_streamers.svg">
+                <p style="color:white;">Streamers</p>
+            </div>
+            <div id="selectChips" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #F2A495;">
+                <img src="./img/example_chips.svg">
+                <p style="color:white;">Chips</p>
+            </div>
+        </div>
+    </div>
+    <div class="pattern-category">
+        <p class="pattern-category-title">Outline</p>
+        <div class="pattern-wrap">
+            <div id="selectBeacon" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #FA9AD0;">
+                <img src="./img/example_beacon.svg">
+                <p>Beacon</p>
+            </div>
+            <div id="selectBauhaus1" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #55C2FF;">
+                <img src="./img/example_bauhaus1.svg">
+                <p>Bauhaus 1</p>
+            </div>
+            <div id="selectBauhaus2" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #383838;">
+                <img src="./img/example_bauhaus2.svg">
+                <p style="color: white;">Bauhaus 2</p>
+            </div>
+            <div id="selectDeco" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #EDF9FE;">
+                <img src="./img/example_deco.svg">
+                <p>Deco</p>
+            </div>
+            <div id="selectCapsules" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #55C2FF;">
+                <img src="./img/example_capsules.svg">
+                <p style="color: white;">Capsules</p>
+            </div>
+        </div>
+    </div>
+
+    <script src='./launchpad.js'></script>
+    <script src='./tiltmin.js'></script>
+</body>
+
+</html>
