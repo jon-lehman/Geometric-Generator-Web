@@ -3,148 +3,463 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self'">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Geometric Illustration Generator Vol. 1</title>
+    <title>Geometric Pattern Generator</title>
+
+    <link rel="stylesheet" href="./aos.css" />
+    <script src="./aos.js"></script>
 
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./launchpad.css">
-
-    <script src='./panzoom.js'></script>
-    <script src='./saveSvgAsPng.js'></script>
 
 </head>
 
 <body>
-    <div class="drag"></div>
-    <h1>Geometric Generator Vol. 1</h1>
-    <p>Choose an illustration style below to get started generating your unique geometric illustration.</p>
-    <div class="pattern-category">
-        <p class="pattern-category-title">Circles</p>
-        <div class="pattern-wrap">
-            <div id="selectRetro" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #F0F2F3">
-                <img src="./img/example_retro.svg">
-                <p>Retro</p>
-            </div>
-            <div id="selectCollage" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #FFCAB3">
-                <img src="./img/example_collage.svg">
-                <p>Collage</p>
-            </div>
-            <div id="selectRiseAndSet" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #FFFFFF">
-                <img src="./img/example_riseAndSet.svg">
-                <p>Rise & Set</p>
-            </div>
-            <div id="selectHourGlass" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #796EFF">
-                <img src="./img/example_hourGlass.svg">
-                <p>Hour Glass</p>
-            </div>
-            <div id="selectCircuits" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #F0F2F3">
-                <img src="./img/example_circuits.svg">
-                <p>Circuits</p>
-            </div>
-            <div id="selectDotGrid" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #FFCAB3">
-                <img src="./img/example_dotGrid.svg">
-                <p>Dot Grid</p>
-            </div>
-            <div id="selectStigma" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #F0F2F3">
-                <img src="./img/example_stigma.png">
-                <p>Stigma</p>
-            </div>
-        </div>
-    </div>
-    <div class="pattern-category">
-        <p class="pattern-category-title">Squares</p>
-        <div class="pattern-wrap">
-            <div id="selectModgePodge" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #9BE3AB">
-                <img src="./img/example_modgePodge.png">
-                <p>Modge Podge</p>
-            </div>
-            <div id="selectSquareGrid" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #4CC6B2">
-                <img src="./img/example_squareGrid.svg">
-                <p>Square Grid</p>
-            </div>
-            <div id="selectChiseled" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #3C4D66">
-                <img src="./img/example_chiseled.png">
-                <p style="color: white;">Chiseled</p>
-            </div>
-            <div id="selectStairs" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #F1F0F2">
-                <img src="./img/example_stairs.png">
-                <p>Stairs</p>
-            </div>
-            <div id="selectIslands" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #65578E;">
-                <img src="./img/example_islands.png">
-                <p style="color: white">Islands</p>
-            </div>
-            <div id="selectAlienLanguage" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #F1F0F2;">
-                <img src="./img/example_alienLanguage.png">
-                <p>Alien Language</p>
-            </div>
-            <div id="selectCrossGrid" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #3C4D66;">
-                <img src="./img/example_crossGrid.svg">
-                <p style="color: white">Cross Grid</p>
-            </div>
-            <div id="selectConfetti" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #65578E;">
-                <img src="./img/example_confetti.png">
-                <p style="color: white">Confetti</p>
-            </div>
-        </div>
-    </div>
-    <div class="pattern-category">
-        <p class="pattern-category-title">Vintage</p>
-        <div class="pattern-wrap">
-            <div id="selectWallArt" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #F19A00;">
-                <img src="./img/example_wallArt.svg">
-                <p>Wall Art</p>
-            </div>
-            <div id="selectTerrazzo" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #6E9E80;">
-                <img src="./img/example_terrazzo.svg">
-                <p>Terrazzo</p>
-            </div>
-            <div id="selectKnickKnacks" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #D6CFB6;">
-                <img src="./img/example_knickKnacks.svg">
-                <p>Knick Knacks</p>
-            </div>
-            <div id="selectStreamers" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #482728;">
-                <img src="./img/example_streamers.svg">
-                <p style="color:white;">Streamers</p>
-            </div>
-            <div id="selectChips" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #F2A495;">
-                <img src="./img/example_chips.svg">
-                <p style="color:white;">Chips</p>
-            </div>
-        </div>
-    </div>
-    <div class="pattern-category">
-        <p class="pattern-category-title">Outline</p>
-        <div class="pattern-wrap">
-            <div id="selectBeacon" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #FA9AD0;">
-                <img src="./img/example_beacon.svg">
-                <p>Beacon</p>
-            </div>
-            <div id="selectBauhaus1" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #55C2FF;">
-                <img src="./img/example_bauhaus1.svg">
-                <p>Bauhaus 1</p>
-            </div>
-            <div id="selectBauhaus2" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #383838;">
-                <img src="./img/example_bauhaus2.svg">
-                <p style="color: white;">Bauhaus 2</p>
-            </div>
-            <div id="selectDeco" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #EDF9FE;">
-                <img src="./img/example_deco.svg">
-                <p>Deco</p>
-            </div>
-            <div id="selectCapsules" class="pattern-btn" data-tilt data-tilt-reverse data-tilt-glare data-tilt-max-glare="0.4" style="background-color: #55C2FF;">
-                <img src="./img/example_capsules.svg">
-                <p style="color: white;">Capsules</p>
-            </div>
-        </div>
-    </div>
 
-    <script src='./launchpad.js'></script>
-    <script src='./tiltmin.js'></script>
+    <section id="header" class="aos-item"  data-aos-mirror="true" data-aos="fade-down" data-aos-delay="900" data-aos-duration="1500" data-aos-mirror="true">
+        <div class="container">
+            <div class="nav">
+                <a href="https://jonlehman.me/" data-aos="fade" data-aos-delay="1500">About Author</a>
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" fill="none" viewBox="0 0 32 33">
+                    <path data-aos="fade" data-aos-delay="1600" fill="#fff" d="M0 2.157c0-.755 0-1.133.147-1.42.13-.255.335-.46.59-.59C1.023 0 1.401 0 2.156 0h10.946c.755 0 1.133 0 1.421.147.254.13.46.335.59.59.146.287.146.665.146 1.42v10.946c0 .755 0 1.133-.147 1.421-.129.254-.335.46-.589.59-.288.146-.666.146-1.42.146H2.156c-.755 0-1.133 0-1.42-.147a1.348 1.348 0 01-.59-.589C0 14.236 0 13.858 0 13.104V2.156zM30.652 16.77c.742-.065 1.347.544 1.347 1.289v9.982a3.96 3.96 0 01-3.96 3.96h-9.982c-.744 0-1.354-.605-1.29-1.347.644-7.37 6.515-13.241 13.885-13.884z"/>
+                    <circle data-aos="fade" data-aos-delay="1650" cx="24.354" cy="7.645" r="7.645" fill="#fff"/>
+                    <ellipse data-aos="fade" data-aos-delay="1700" cx="7.63" cy="24.66" fill="#fff" rx="7.63" ry="7.66"/>
+                </svg>
+                <a href="https://github.com/jon-lehman/Geometric-Generator-Web" data-aos="fade" data-aos-delay="1900">View on Github</a>
+            </div>
+            <hr data-aos="hr" data-aos-delay="1200" data-aos-duration="1000"/>
+        </div>
+    </section>
+
+    <section id="hero">
+        <!-- "Streams" Art -->
+        <svg id="streamers" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 386 472">
+            <path data-aos="fade" data-aos-delay="1100" fill="#424242" fill-rule="evenodd" d="M115.262 122.475c3.458-4.474.725-11.065-3.559-12.213-1.138-.303-2.78-.303-4.154.299-1.089.481-2.52 1.535-3.396 4.512-.731 2.482-1.08 6.384-.188 12.244 6.646-.652 9.849-2.97 11.297-4.842zm-7.843 18.63c8.441-1.231 14.911-4.702 19.007-10 9.496-12.288 3.139-30.668-11.075-34.473-3.73-.998-8.72-1.079-13.478 1.014-5.045 2.215-9.25 6.631-11.256 13.445-1.261 4.286-1.622 9.382-.985 15.384-6.783-1.203-15.04-3.561-24.974-7.539l-5.248 13.097c13.024 5.218 24.035 8.108 33.257 9.135 2.885 9.929 7.801 21.999 15.37 36.672l12.54-6.472c-6.275-12.161-10.481-22.134-13.156-30.262l-.002-.001z" clip-rule="evenodd"/>
+            <path data-aos="fade" data-aos-delay="1500" fill="#303030" fill-rule="evenodd" d="M50.527 165.738c-6.322-1.799-12.65-5.249-16.5-10.094l11.045-8.779c1.424 1.788 4.753 4.002 9.32 5.304 4.482 1.275 8.976 1.33 12.313.148l4.713 13.3c-6.862 2.431-14.485 1.945-20.891.121z" clip-rule="evenodd"/>
+            <path data-aos="fade" data-aos-delay="1600" fill="#5E5E5E" fill-rule="evenodd" d="M235.064 36.735c-1.014-.014-2.357.28-4.084 1.485-1.63 1.14-3.074 3.31-3.172 7.53-.097 4.354 1.318 10.446 5.198 17.996 3.881 7.548 5.408 14.477 4.024 20.677-1.439 6.424-5.666 10.617-10.188 13.23-4.392 2.538-9.431 3.834-13.688 4.571-3.975.687-7.744.966-10.253 1.149l-.609.045-1.048-14.072.567-.041c2.548-.189 5.674-.42 8.933-.985 3.56-.616 6.728-1.549 9.036-2.884 2.179-1.258 3.141-2.581 3.478-4.093.387-1.734.278-5.155-2.802-11.146-4.55-8.86-6.923-17.317-6.753-24.768.171-7.588 3.046-14.48 9.198-18.776 3.83-2.674 8.012-4.08 12.332-4.028 4.275.052 8.145 1.521 11.435 3.691 6.415 4.233 11.244 11.486 14.328 19.047l-13.065 5.33c-2.48-6.078-5.855-10.501-9.032-12.598-1.502-.992-2.779-1.347-3.835-1.36z" clip-rule="evenodd"/>
+            <path data-aos="fade" data-aos-delay="1900" fill="#303030" fill-rule="evenodd" d="M169.745 62.616c-.113 9.734-4.448 18.783-8.253 24.188l-11.538-8.118c2.77-3.937 5.615-10.249 5.685-16.234.033-2.868-.567-5.518-1.971-7.88-1.395-2.349-3.837-4.84-8.168-7.02l6.34-12.604c6.379 3.208 10.994 7.428 13.956 12.412 2.953 4.967 4.012 10.266 3.951 15.257h-.002z" clip-rule="evenodd"/>
+            <path data-aos="fade" data-aos-delay="1100" fill="#5E5E5E" fill-rule="evenodd" d="M188.079 35.06c-.659-1.568-2.087-2.959-4.317-4.817l9.031-10.842.081.069c2.092 1.741 6.092 5.07 8.216 10.13 2.397 5.711 1.973 12.339-2.155 19.585l-12.261-6.984c2.358-4.136 1.818-6.155 1.405-7.138v-.002z" clip-rule="evenodd"/>
+            <path data-aos="fade" data-aos-delay="2100" fill="#424242" fill-rule="evenodd" d="M155.909 169.671c1.014.013 2.356-.28 4.084-1.486 1.629-1.139 3.074-3.31 3.171-7.529.098-4.355-1.318-10.447-5.198-17.997-3.88-7.548-5.407-14.476-4.023-20.677 1.438-6.423 5.666-10.617 10.187-13.23 4.393-2.538 9.432-3.834 13.689-4.571 3.974-.686 7.744-.966 10.253-1.149l.609-.044 1.048 14.071-.568.041c-2.548.189-5.674.42-8.933.986-3.559.616-6.727 1.548-9.035 2.883-2.179 1.258-3.141 2.581-3.478 4.094-.387 1.733-.278 5.155 2.801 11.146 4.551 8.86 6.923 17.316 6.753 24.768-.17 7.587-3.046 14.479-9.197 18.775-3.831 2.675-8.012 4.081-12.332 4.028-4.275-.051-8.146-1.521-11.436-3.691-6.415-4.232-11.243-11.486-14.328-19.047l13.066-5.331c2.48 6.08 5.855 10.502 9.032 12.6 1.502.992 2.778 1.347 3.835 1.36z" clip-rule="evenodd"/>
+            <path data-aos="fade" data-aos-delay="1200" fill="#303030" fill-rule="evenodd" d="M221.23 143.789c.113-9.734 4.447-18.782 8.252-24.188l11.538 8.118c-2.77 3.937-5.614 10.249-5.684 16.234-.034 2.868.567 5.518 1.97 7.881 1.396 2.348 3.838 4.84 8.169 7.019l-6.34 12.605c-6.38-3.209-10.994-7.429-13.957-12.412-2.952-4.968-4.011-10.266-3.95-15.257h.002z" clip-rule="evenodd"/>
+            <path data-aos="fade" data-aos-delay="1500" fill="#424242" fill-rule="evenodd" d="M155.928 213.806l-17.648 4.189-3.258-13.728 17.653-4.19 3.258 13.727-.005.002z" clip-rule="evenodd"/>
+            <path data-aos="fade" data-aos-delay="1200" fill="#303030" fill-rule="evenodd" d="M202.897 171.346c.659 1.568 2.088 2.959 4.318 4.817l-9.031 10.843-.081-.069c-2.092-1.742-6.092-5.07-8.216-10.13-2.397-5.712-1.974-12.34 2.154-19.586l12.261 6.984c-2.357 4.137-1.817 6.155-1.404 7.139l-.001.002z" clip-rule="evenodd"/>
+            <g>
+            <path data-aos="fade" data-aos-delay="1100" fill="#303030" fill-rule="evenodd" d="M120.793 266.779c6.553-9.924 16.971-15.966 27.125-17.452l2.045 13.963c-6.324.924-13.136 4.814-17.394 11.262-4.11 6.227-6.177 15.367-2.176 27.608l-13.413 4.382c-5.209-15.941-2.885-29.618 3.813-39.767v.004zM210.577 308.128c1.038.305 2.057.668 3.053 1.088 14.256 6.027 17.236 20.496 11.636 30.148-2.816 4.857-7.947 8.602-14.565 8.689-6.451.085-12.799-3.314-18.499-9.346-4.324-4.573-6.329-9.773-6.32-15.089-.63.206-1.266.422-1.908.651-9.514 3.367-18.542 8.517-23.834 12.172l-8.016-11.614c6.106-4.213 16.234-9.998 27.138-13.86 3.895-1.378 8.129-2.601 12.466-3.363a48.777 48.777 0 013.807-4.631c8.48-9.164 21.1-16.623 30.178-19.855l4.734 13.294c-5.703 2.029-13.515 6.384-19.872 11.716h.002zm-10.097 12.764c2.921-.015 5.504.41 7.657 1.32 3.397 1.436 4.809 3.467 5.352 5.121.598 1.821.313 3.674-.428 4.952-.689 1.186-1.574 1.645-2.547 1.659-1.139.015-3.955-.589-8.057-4.929-2.389-2.526-2.736-4.693-2.309-6.87.081-.405.189-.822.332-1.253zM223.539 257.018c-23.226 1.528-42.92-10.854-50.147-17.398l9.472-10.459c5.498 4.98 21.604 14.971 39.75 13.778l.925 14.081v-.002z" clip-rule="evenodd"/>
+            <path data-aos="fade" data-aos-delay="1500" fill="#424242" fill-rule="evenodd" d="M170.931 284.502c1.903 1.877 4.337 2.871 5.698 3.039l-1.732 14.003c-4.638-.573-9.898-3.072-13.877-6.999-4.147-4.092-7.349-10.228-6.405-17.854l14.003 1.732c-.294 2.381.578 4.366 2.313 6.079z" clip-rule="evenodd"/>
+            </g>
+            <g>
+            <path data-aos="fade" data-aos-delay="1500" fill="#030303" fill-rule="evenodd" d="M174.84 350.86c9.924 6.553 15.965 16.971 17.452 27.126l-13.964 2.044c-.924-6.323-4.814-13.135-11.262-17.394-6.227-4.109-15.367-6.176-27.608-2.176l-4.381-13.413c15.94-5.208 29.617-2.885 39.767 3.814l-.004-.001z" clip-rule="evenodd"/>
+            <path data-aos="fade" data-aos-delay="1400" fill="#303030" fill-rule="evenodd" d="M184.599 453.604c-1.528-23.226 10.854-42.92 17.399-50.148l10.458 9.473c-4.98 5.498-14.97 21.604-13.778 39.749l-14.081.925.002.001z" clip-rule="evenodd"/>
+            <path data-aos="fade" data-aos-delay="2100" fill="#030303" fill-rule="evenodd" d="M157.111 400.998c-1.877 1.902-2.87 4.337-3.038 5.697l-14.004-1.732c.573-4.637 3.072-9.897 6.999-13.876 4.092-4.147 10.228-7.349 17.854-6.406l-1.732 14.004c-2.381-.295-4.365.577-6.079 2.313z" clip-rule="evenodd"/>
+            </g>
+            <g>
+            <path data-aos="fade" data-aos-delay="1100" fill="#424242" fill-rule="evenodd" d="M269.515 217.242c-5.67-3.165-9.855-8.84-11.843-13.11l-12.789 5.956c2.863 6.147 8.807 14.481 17.76 19.476 9.451 5.271 21.634 6.433 35.205-1.274l-6.973-12.27c-9.252 5.258-16.186 4.106-21.356 1.22l-.004.002z" clip-rule="evenodd"/>
+            <path data-aos="fade" data-aos-delay="1600" fill="#030303" fill-rule="evenodd" d="M325.464 135.717c-4.715.026-11.147 1.959-20.618 8.051-11.214 7.21-21.839 7.864-30.793 5.197-8.62-2.565-15.125-8.021-19.05-12.169l10.25-9.7c2.994 3.167 7.465 6.749 12.826 8.346 5.027 1.495 11.392 1.436 19.135-3.544 10.535-6.775 19.647-10.244 28.171-10.291 8.761-.049 15.744 3.512 21.877 8.3l-8.682 11.121c-4.675-3.649-8.634-5.337-13.114-5.312l-.002.001z" clip-rule="evenodd"/>
+            <path data-aos="fade" data-aos-delay="1900" fill="#424242" fill-rule="evenodd" d="M304.859 180.899c5.602-8.342 8.413-18.377 9.222-24.921l14.004 1.732c-1.017 8.222-4.415 20.486-11.51 31.054-7.2 10.719-18.621 20.206-35.378 20.934l-.613-14.096c11.014-.48 18.777-6.513 24.275-14.705v.002zM279.908 171.615l-18.612 10.901-7.133-12.176 18.613-10.9 7.132 12.175z" clip-rule="evenodd"/>
+            </g>
+            <g>
+            <path data-aos="fade" data-aos-delay="1100" fill="#303030" fill-rule="evenodd" d="M250.89 291.435c-.682 4.022.443 7.95 1.966 10.612l-12.249 7.009c-2.791-4.878-4.967-12.098-3.63-19.984 1.386-8.168 6.395-16.155 16.386-22.392 8.659-5.406 10.586-10.083 10.931-13.063.395-3.408-.973-6.88-2.951-10.335l12.247-7.008c2.338 4.087 5.654 10.897 4.721 18.967-.985 8.499-6.401 16.494-17.477 23.409-6.978 4.357-9.31 9.043-9.946 12.785h.002z" clip-rule="evenodd"/>
+            <path data-aos="fade" data-aos-delay="1600" fill="#424242" fill-rule="evenodd" d="M330.081 358.794c-6.906 2.299-14.827 1.51-21.92-1.858l6.053-12.746c4.317 2.049 8.462 2.198 11.413 1.217 2.745-.914 4.683-2.817 5.396-5.975 2.598-11.489 5.171-22.259 6.566-27.79l13.683 3.447c-1.357 5.39-3.907 16.04-6.484 27.453-1.875 8.295-7.59 13.887-14.705 16.253l-.002-.001z" clip-rule="evenodd"/>
+            <path data-aos="fade" data-aos-delay="1400" fill="#5E5E5E" fill-rule="evenodd" d="M253.876 341.631c-5.296-2.007-10.763-2.805-13.968-2.923l.511-14.1c4.546.164 11.55 1.213 18.457 3.828 6.818 2.582 14.496 7.062 19.014 14.726l-12.157 7.163c-2.199-3.731-6.466-6.654-11.856-8.696l-.001.002z" clip-rule="evenodd"/>
+            <path data-aos="fade" data-aos-delay="1200" fill="#303030" fill-rule="evenodd" d="M323.769 278.437c10.342-9.319 24.522-14.501 34.413-16.298l-2.52-13.88c-11.636 2.111-28.503 8.129-41.341 19.695-13.212 11.907-22.059 29.721-16.425 53.906l13.741-3.2c-4.304-18.479 2.164-31.243 12.13-40.223h.002z" clip-rule="evenodd"/>
+            </g>
+            <g>
+            <path data-aos="fade" data-aos-delay="1100" fill="#5E5E5E" fill-rule="evenodd" d="M339.877 391.592c1.857 6.333-.687 12.37-5.937 16.075-3.234 2.284-6.656 3.859-10.246 4.29a15.552 15.552 0 01-10.096-2.189c-5.41-3.293-8.585-9.416-10.617-14.69a82.827 82.827 0 01-2.59-8.047c-7.866-.036-17.578 1.084-29.248 4.072l-3.501-13.669c11.075-2.835 20.941-4.221 29.566-4.472l-.067-.333c-.664-3.284-1.186-5.867-1.725-7.729l13.554-3.925c.708 2.449 1.422 5.976 2.156 9.61.212 1.045.425 2.101.64 3.142 6.212.906 11.454 2.54 15.699 4.687 5.945 3.011 10.742 7.483 12.412 13.178zm-24.118-2.627c.127.35.255.695.386 1.034 1.839 4.767 3.617 7.002 4.792 7.716.314.213.699.297 1.074.233.589-.07 1.822-.417 3.79-1.806.21-.138.397-.308.554-.505l-.019-.075c-.164-.563-1.226-2.524-5.242-4.556a30.266 30.266 0 00-5.333-2.041h-.002zm10.607 6.732v-.004.004zm.024-.114a.031.031 0 01.005-.01l-.005.01z" clip-rule="evenodd"/>
+            <path data-aos="fade" data-aos-delay="1500" fill="#030303" fill-rule="evenodd" d="M321.016 460.659c-5.19-16.237-1.161-28.058 4.625-38.56l12.358 6.809c-4.688 8.514-7.139 16.203-3.542 27.456l-13.441 4.295z" clip-rule="evenodd"/>
+            <path data-aos="fade" data-aos-delay="1200" fill="#5E5E5E" fill-rule="evenodd" d="M277.219 419.686l14.993-6.27 5.444 13.017-14.993 6.27-5.444-13.017z" clip-rule="evenodd"/>
+            </g>
+        </svg>
+        <!-- "Chips" Art -->
+        <svg id="chips" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 480 560">
+            <path data-aos="fade" data-aos-delay="1100" fill="#303030" d="M112.68 0l65.939 9.608 9.598 54.411-41.61 16.644-51.855-32.646L112.68 0z"/>
+            <path data-aos="fade" data-aos-delay="1200" fill="#5E5E5E" d="M79.371 82.124l72.971-12.943 10.252 71.839-83.223-58.896z"/>
+            <path data-aos="fade" data-aos-delay="1600" fill="#424242" d="M99.644 66.038L80.301 50.843 57.045 74.098l42.596-8.06h.003zM133.759 168.959c0 10.617 8.606 19.223 19.222 19.223 10.616 0 19.222-8.606 19.222-19.223 0-10.616-8.606-19.222-19.222-19.222-10.616 0-19.222 8.606-19.222 19.222z"/>
+            <path data-aos="fade" data-aos-delay="1400" fill="#303030" d="M169.087 109.06a6.318 6.318 0 1012.637 0 6.318 6.318 0 00-12.637 0z"/>
+            <path data-aos="fade" data-aos-delay="1100" fill="#5E5E5E" d="M55.44 188.185l61.944-56.481 12.716 9.429-43.638 46.107-31.021.939v.006z"/>
+            <path data-aos="fade" data-aos-delay="2000" fill="#5E5E5E" d="M79 187.487l41.501-53.451 9.599 7.116-43.638 46.107-7.465.224.004.004z"/>
+            <path data-aos="fade" data-aos-delay="2200" fill="#030303" d="M40.986 32.156c0 8.773 7.112 15.884 15.884 15.884s15.884-7.111 15.884-15.884c0-8.772-7.112-15.883-15.884-15.883s-15.884 7.11-15.884 15.883z"/>
+            <path data-aos="fade" data-aos-delay="1300" fill="#424242" d="M80.946 7.977a6.481 6.481 0 1012.962 0 6.481 6.481 0 00-12.962 0z"/>
+            <path data-aos="fade" data-aos-delay="1500" fill="#5E5E5E" d="M34.435 163.48l-16.454-32.079-6.875 38.326 23.33-6.247z"/>
+            <g>
+            <path data-aos="fade" data-aos-delay="1100" fill="#5E5E5E" d="M93.025 292.485l92.674 4.351-31.326-94.413-61.348 90.062z"/>
+            <path data-aos="fade" data-aos-delay="1500" fill="#303030" d="M115.558 239.82l18.783-23.473-33.072-23.932-23.46 2.528a20781.06 20781.06 0 0037.749 44.877z"/>
+            <path data-aos="fade" data-aos-delay="1100" fill="#303030" d="M113.956 241.815l20.385-25.475-29.614-21.433c2.957 14.929 6.868 34.747 9.233 46.908h-.004z"/>
+            <path data-aos="fade" data-aos-delay="1800" fill="#030303" d="M68.658 258.986l26.54 7.397-13.488 19.142-13.052-26.539z"/>
+            <path data-aos="fade" data-aos-delay="1400" fill="#5E5E5E" d="M54.313 331.208c0-14.417-11.687-26.104-26.104-26.104-14.416 0-26.104 11.687-26.104 26.104 0 14.416 11.688 26.104 26.104 26.104 14.417 0 26.104-11.688 26.104-26.104z"/>
+            <path data-aos="fade" data-aos-delay="2200" fill="#030303" d="M77.796 291.182L33.42 324.683l-18.71-41.334 39.159-30.89 23.928 38.723z"/>
+            <path data-aos="fade" data-aos-delay="1700" fill="#424242" d="M35.826 249.63a7.615 7.615 0 00-7.615-7.615 7.615 7.615 0 100 15.23 7.615 7.615 0 007.615-7.615z"/>
+            <path data-aos="fade" data-aos-delay="1900" fill="#5E5E5E" d="M5.572 226.788c6.238 1.883 19.142 5.83 20.885 6.525l3.044-35.24-23.929 28.715z"/>
+            <path data-aos="fade" data-aos-delay="1800" fill="#303030" d="M151.757 314.831H72.54l-11.38 51.448 60.095-6.827 30.502-44.618v-.003z"/>
+            <path data-aos="fade" data-aos-delay="2200" fill="#030303" d="M144.947 360.385c0-10.952-8.879-19.831-19.831-19.831s-19.831 8.879-19.831 19.831 8.879 19.831 19.831 19.831 19.831-8.879 19.831-19.831z"/>
+            <path data-aos="fade" data-aos-delay="1400" fill="#5E5E5E" d="M166.346 316.889l-16.983 24.008 25.764 14.641-8.781-38.649z"/>
+            </g>
+            <g>
+            <path data-aos="fade" data-aos-delay="1100" fill="#303030" d="M163.869 518.993l-41.328-33.068 20.882-62.216 38.287 5.658 6.093 56.558-23.931 33.068h-.003z"/>
+            <path data-aos="fade" data-aos-delay="1500" fill="#5E5E5E" d="M140.396 500.193l23.474 18.784 23.932-33.072-2.528-23.461a21265.598 21265.598 0 00-44.878 37.749z"/>
+            <path data-aos="fade" data-aos-delay="2200" fill="#303030" d="M138.398 498.591l25.476 20.385 21.433-29.615c-14.929 2.957-34.747 6.869-46.909 9.233v-.003z"/>
+            <path data-aos="fade" data-aos-delay="2100" fill="#424242" d="M121.231 453.295l-7.398 26.539-19.142-13.487 26.54-13.052z"/>
+            <path data-aos="fade" data-aos-delay="1600" fill="#030303" d="M49.008 438.949c14.417 0 26.104-11.687 26.104-26.104s-11.687-26.104-26.104-26.104-26.104 11.687-26.104 26.104 11.687 26.104 26.104 26.104z"/>
+            <path data-aos="fade" data-aos-delay="1400" fill="#5E5E5E" d="M89.032 462.431l-33.5-44.378 41.333-18.709 30.89 39.158-38.723 23.929zM130.586 420.46a7.615 7.615 0 100-15.231 7.615 7.615 0 000 15.231zM153.43 390.207c-1.884 6.238-5.831 19.142-6.526 20.885l35.241 3.043-28.715-23.928z"/>
+            <path data-aos="fade" data-aos-delay="1200" fill="#424242" d="M65.386 536.395v-79.218l-51.448-11.379 6.827 60.095 44.617 30.502h.004z"/>
+            <path data-aos="fade" data-aos-delay="2100" fill="#424242" d="M19.83 529.582c10.953 0 19.832-8.879 19.832-19.831 0-10.953-8.879-19.831-19.831-19.831S0 498.798 0 509.751c0 10.952 8.879 19.831 19.83 19.831z"/>
+            <path data-aos="fade" data-aos-delay="1900" fill="#5E5E5E" d="M63.329 550.982l-24.008-16.983-14.641 25.764 38.649-8.781z"/>
+            </g>
+            <g>
+            <path data-aos="fade" data-aos-delay="1200" fill="#030303" d="M275.082 85.043c0 15.153 12.284 27.436 27.437 27.436 15.152 0 27.436-12.283 27.436-27.436s-12.284-27.437-27.436-27.437c-15.153 0-27.437 12.284-27.437 27.437z"/>
+            <path data-aos="fade" data-aos-delay="1500" fill="#424242" d="M331.741 122.103a6.551 6.551 0 1013.102.002 6.551 6.551 0 00-13.102-.002z"/>
+            <path data-aos="fade" data-aos-delay="1800" fill="#303030" d="M366.115 9.445a4.6 4.6 0 109.202 0 4.6 4.6 0 00-9.202 0zM257.288 14.075H285l-11.245 27.712-16.467-27.709v-.003z"/>
+            <path data-aos="fade" data-aos-delay="2000" fill="#5E5E5E" d="M284.596 120.512h31.332l14.054 48.6-60.645-2.813 15.259-45.787z"/>
+            <path data-aos="fade" data-aos-delay="2200" fill="#424242" d="M310.785 168.22l-41.452-1.923 7.932-23.79 32.553 12.171.967 13.542z"/>
+            <path data-aos="fade" data-aos-delay="1500" fill="#303030" d="M297.992 120.512h-13.395l-11.834 35.497a26.29 26.29 0 0022.042-11.048 26.288 26.288 0 003.187-24.449z"/>
+            <path data-aos="fade" data-aos-delay="1300" fill="#5E5E5E" d="M238.406 89.586l-24.931-39.223-11.069 96.39 36-57.167z"/>
+            <path data-aos="fade" data-aos-delay="1600" fill="#424242" d="M209.915 158.026l32.351-51.576 29.98 13.542-62.334 38.034h.003z"/>
+            <path data-aos="fade" data-aos-delay="1900" fill="#5E5E5E" d="M256.423 93.045a5.04 5.04 0 1010.079 0 5.04 5.04 0 00-10.079 0z"/>
+            <path data-aos="fade" data-aos-delay="1800" fill="#424242" d="M226.516 178.78a7.34 7.34 0 1014.68 0 7.34 7.34 0 00-14.68 0z"/>
+            </g>
+            <g>
+            <path data-aos="fade" data-aos-delay="1500" fill="#424242" d="M287.002 280.146l-92.673-4.351 31.325 94.413 61.348-90.062z"/>
+            <path data-aos="fade" data-aos-delay="1200" fill="#5E5E5E" d="M245.667 356.284l33.068-41.328 62.216 20.882-5.658 38.287-56.558 6.093-33.068-23.931v-.003z"/>
+            <path data-aos="fade" data-aos-delay="1300" fill="#030303" d="M264.466 332.811l-18.784 23.473 33.072 23.932 23.461-2.528a20723.379 20723.379 0 00-37.749-44.877z"/>
+            <path data-aos="fade" data-aos-delay="1400" fill="#303030" d="M266.069 330.814l-20.385 25.476 29.615 21.433c-2.957-14.929-6.869-34.747-9.233-46.909h.003z"/>
+            <path data-aos="fade" data-aos-delay="1800" fill="#5E5E5E" d="M311.365 313.645l-26.539-7.397 13.487-19.143 13.052 26.54z"/>
+            <path data-aos="fade" data-aos-delay="2200" fill="#303030" d="M325.713 241.423c0 14.417 11.687 26.104 26.103 26.104 14.417 0 26.104-11.687 26.104-26.104s-11.687-26.104-26.104-26.104c-14.416 0-26.103 11.687-26.103 26.104z"/>
+            <path data-aos="fade" data-aos-delay="2100" fill="#303030" d="M302.227 281.449l44.378-33.501 18.709 41.334-39.158 30.89-23.929-38.723zM344.199 323.001a7.615 7.615 0 1015.23 0 7.615 7.615 0 00-15.23 0z"/>
+            <path data-aos="fade" data-aos-delay="1900" fill="#030303" d="M374.453 345.842c-6.237-1.883-19.142-5.83-20.885-6.526l-3.043 35.241 23.928-28.715z"/>
+            <path data-aos="fade" data-aos-delay="1400" fill="#5E5E5E" d="M228.262 257.799h79.218l11.379-51.448-60.094 6.827-30.503 44.617v.004z"/>
+            <path data-aos="fade" data-aos-delay="1800" fill="#424242" d="M235.079 212.246c0 10.952 8.878 19.831 19.83 19.831 10.953 0 19.831-8.879 19.831-19.831s-8.878-19.831-19.831-19.831c-10.952 0-19.83 8.879-19.83 19.831z"/>
+            <path data-aos="fade" data-aos-delay="1400" fill="#5E5E5E" d="M213.679 255.742l16.983-24.008-25.764-14.641 8.781 38.649z"/>
+            </g>
+            <g>
+            <path data-aos="fade" data-aos-delay="1100" fill="#5E5E5E" d="M304.903 384.444l65.938 9.608 9.598 54.412-41.609 16.643-51.855-32.646 17.928-48.017z"/>
+            <path data-aos="fade" data-aos-delay="1600" fill="#030303" d="M291.867 450.482l-19.344-15.195-23.255 23.256 42.596-8.061h.003z"/>
+            <path data-aos="fade" data-aos-delay="2200" fill="#303030" d="M233.207 416.601c0 8.772 7.111 15.884 15.884 15.884 8.772 0 15.884-7.112 15.884-15.884 0-8.773-7.112-15.884-15.884-15.884-8.773 0-15.884 7.111-15.884 15.884z"/>
+            <path data-aos="fade" data-aos-delay="1700" fill="#424242" d="M273.171 392.422a6.48 6.48 0 1012.962 0 6.482 6.482 0 10-12.962 0z"/>
+            </g>
+            <g>
+            <path data-aos="fade" data-aos-delay="1100" fill="#030303" d="M453.104 258.986l26.539 7.397-13.488 19.142-13.051-26.539z"/>
+            <path data-aos="fade" data-aos-delay="1400" fill="#303030" d="M438.758 331.208c0-14.417-11.687-26.104-26.104-26.104-14.416 0-26.103 11.687-26.103 26.104 0 14.416 11.687 26.104 26.103 26.104 14.417 0 26.104-11.688 26.104-26.104z"/>
+            <path data-aos="fade" data-aos-delay="1500" fill="#030303" d="M462.241 291.182l-44.377 33.501-18.71-41.334 39.159-30.89 23.928 38.723z"/>
+            <path data-aos="fade" data-aos-delay="1100" fill="#303030" d="M420.271 249.63a7.615 7.615 0 00-7.615-7.615 7.615 7.615 0 00-7.615 7.615 7.615 7.615 0 007.615 7.615 7.615 7.615 0 007.615-7.615z"/>
+            <path data-aos="fade" data-aos-delay="1900" fill="#030303" d="M390.018 226.787c6.237 1.883 19.142 5.83 20.884 6.525l3.044-35.24-23.928 28.715z"/>
+            </g>
+        </svg>
+        <div class="container">
+            <h3 data-aos="fade-up">Just Another Geometric Pattern Generator</h3>
+            <h1 data-aos="fade-up" data-aos-delay="200">Create unique geometric vector artwork with a single click.</h1>
+            <div class="button-group">
+                <div data-aos="fade-up" data-aos-delay="400">
+                    <a href="http://eepurl.com/hwapqr" target="_blank" class="button secondary">Signup for Emails</a>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="600">
+                    <a href="app/index.html" class="button primary">Launch App</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="video">
+        <div data-aos="video" data-aos-once="true" data-aos-duration="1500" data-aos-easing="ease-out-cubic" data-aos-offset="100" class="container">
+            <div class="video-overlay"></div>
+            <video height="100%" width="100%" muted playsinline autoplay="true" loop>
+                <source src="assets/uirecord_new_1.webm" type="video/webm">
+                <source src="assets/uirecord_new_1.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section>
+
+    <section id="artworkScroll">
+        <div class="container">
+            <h2 data-aos="fade-up">Virtually infinite possibilities</h2>
+            <div class="artwork-scroll-wrapper">
+                <div class="artwork-scroll-set">
+                    <a href="app/index.html?pattern=retro" data-aos="fade-left" data-aos-delay="0" class="pattern-btn" style="background-color: #FFFFFF">
+                        <img src="./assets/pattern-samples/example_retro.svg">
+                        <p>Retro</p>
+                    </a>
+                    <a href="app/index.html?pattern=collage" data-aos="fade-left" data-aos-delay="50" class="pattern-btn" style="background-color: #FFCAB3">
+                        <img src="./assets/pattern-samples/example_collage.svg">
+                        <p>Collage</p>
+                    </a>
+                    <a href="app/index.html?pattern=riseAndSet" data-aos="fade-left" data-aos-delay="100" class="pattern-btn"  style="background-color: #FFFFFF">
+                        <img src="./assets/pattern-samples/example_riseAndSet.svg">
+                        <p>Rise & Set</p>
+                    </a>
+                    <a href="app/index.html?pattern=hourGlass" data-aos="fade-left" data-aos-delay="150" class="pattern-btn" style="background-color: #796EFF">
+                        <img src="./assets/pattern-samples/example_hourGlass.svg">
+                        <p>Hour Glass</p>
+                    </a>
+                    <a href="app/index.html?pattern=circuits" data-aos="fade-left" data-aos-delay="200" class="pattern-btn" style="background-color: #F0F2F3">
+                        <img src="./assets/pattern-samples/example_circuits.svg">
+                        <p>Circuits</p>
+                    </a>
+                    <a href="app/index.html?pattern=dotGrid" data-aos="fade-left" data-aos-delay="250" class="pattern-btn" style="background-color: #FFCAB3">
+                        <img src="./assets/pattern-samples/example_dotGrid.svg">
+                        <p>Dot Grid</p>
+                    </a>
+                    <a href="app/index.html?pattern=stigma" data-aos="fade-left" data-aos-delay="300" class="pattern-btn" style="background-color: #F0F2F3">
+                        <img src="./assets/pattern-samples/example_stigma.svg">
+                        <p>Stigma</p>
+                    </a>
+                    <a href="app/index.html?pattern=modgePodge" data-aos="fade-left" data-aos-delay="350" class="pattern-btn" style="background-color: #9BE3AB">
+                        <img src="./assets/pattern-samples/example_modgePodge.svg">
+                        <p>Modge Podge</p>
+                    </a>
+                    <a href="app/index.html?pattern=squareGrid" data-aos="fade-left" data-aos-delay="400" class="pattern-btn" style="background-color: #4CC6B2">
+                        <img src="./assets/pattern-samples/example_squareGrid.svg">
+                        <p>Square Grid</p>
+                    </a>
+                    <a href="app/index.html?pattern=chiseled" data-aos="fade-left" data-aos-delay="450" class="pattern-btn" style="background-color: #3C4D66">
+                        <img src="./assets/pattern-samples/example_chiseled.svg">
+                        <p style="color: white;">Chiseled</p>
+                    </a>
+                    <a href="app/index.html?pattern=stairs" data-aos="fade-left" data-aos-delay="500" class="pattern-btn" style="background-color: #F1F0F2">
+                        <img src="./assets/pattern-samples/example_stairs.svg">
+                        <p>Stairs</p>
+                    </a>
+                    <a href="app/index.html?pattern=islands" data-aos="fade-left" data-aos-delay="550" class="pattern-btn" style="background-color: #65578E;">
+                        <img src="./assets/pattern-samples/example_islands.svg">
+                        <p style="color: white">Islands</p>
+                    </a>
+                    <a href="app/index.html?pattern=alienLanguage" data-aos="fade-left" data-aos-delay="600" class="pattern-btn" style="background-color: #F1F0F2;">
+                        <img src="./assets/pattern-samples/example_alienLanguage.svg">
+                        <p>Alien Language</p>
+                    </a>
+                    <a href="app/index.html?pattern=crossGrid" data-aos="fade-left" data-aos-delay="650" class="pattern-btn" style="background-color: #3C4D66;">
+                        <img src="./assets/pattern-samples/example_crossGrid.svg">
+                        <p style="color: white">Cross Grid</p>
+                    </a>
+                    <a href="app/index.html?pattern=confetti" data-aos="fade-left" data-aos-delay="700" class="pattern-btn" style="background-color: #65578E;">
+                        <img src="./assets/pattern-samples/example_confetti.svg">
+                        <p style="color: white">Confetti</p>
+                    </a>
+                    <a href="app/index.html?pattern=wallArt" data-aos="fade-left" data-aos-delay="750" class="pattern-btn" style="background-color: #F19A00;">
+                        <img src="./assets/pattern-samples/example_wallArt.svg">
+                        <p>Wall Art</p>
+                    </a>
+                    <a href="app/index.html?pattern=terrazzo" data-aos="fade-left" data-aos-delay="800" class="pattern-btn" style="background-color: #6E9E80;">
+                        <img src="./assets/pattern-samples/example_terrazzo.svg">
+                        <p>Terrazzo</p>
+                    </a>
+                    <a href="app/index.html?pattern=knickKnacks" data-aos="fade-left" data-aos-delay="850" class="pattern-btn" style="background-color: #D6CFB6;">
+                        <img src="./assets/pattern-samples/example_knickKnacks.svg">
+                        <p>Knick Knacks</p>
+                    </a>
+                    <a href="app/index.html?pattern=streamers" data-aos="fade-left" data-aos-delay="900" class="pattern-btn" style="background-color: #482728;">
+                        <img src="./assets/pattern-samples/example_streamers.svg">
+                        <p style="color:white;">Streamers</p>
+                    </a>
+                    <a href="app/index.html?pattern=chips" data-aos="fade-left" data-aos-delay="1000" class="pattern-btn" style="background-color: #F2A495;">
+                        <img src="./assets/pattern-samples/example_chips.svg">
+                        <p style="color:white;">Chips</p>
+                    </a>
+                    <a href="app/index.html?pattern=beacon" data-aos="fade-left" data-aos-delay="1050" class="pattern-btn" style="background-color: #FA9AD0;">
+                        <img src="./assets/pattern-samples/example_beacon.svg">
+                        <p>Beacon</p>
+                    </a>
+                    <a href="app/index.html?pattern=bauhaus1" data-aos="fade-left" data-aos-delay="1100" class="pattern-btn" style="background-color: #55C2FF;">
+                        <img src="./assets/pattern-samples/example_bauhaus1.svg">
+                        <p>Bauhaus 1</p>
+                    </a>
+                    <a href="app/index.html?pattern=bauhaus2" data-aos="fade-left" data-aos-delay="1150" class="pattern-btn" style="background-color: #383838;">
+                        <img src="./assets/pattern-samples/example_bauhaus2.svg">
+                        <p style="color: white;">Bauhaus 2</p>
+                    </a>
+                    <a href="app/index.html?pattern=deco" data-aos="fade-left" data-aos-delay="1200" class="pattern-btn" style="background-color: #EDF9FE;">
+                        <img src="./assets/pattern-samples/example_deco.svg">
+                        <p>Deco</p>
+                    </a>
+                    <a href="app/index.html?pattern=capsules" data-aos="fade-left" data-aos-delay="1250" class="pattern-btn" style="background-color: #55C2FF;">
+                        <img src="./assets/pattern-samples/example_capsules.svg">
+                        <p style="color: white;">Capsules</p>
+                    </a>
+                </div>
+                <div class="artwork-scroll-set">
+                    <a href="app/index.html?pattern=retro" data-aos="fade-left" data-aos-delay="0" class="pattern-btn" style="background-color: #FFFFFF">
+                        <img src="./assets/pattern-samples/example_retro.svg">
+                        <p>Retro</p>
+                    </a>
+                    <a href="app/index.html?pattern=collage" data-aos="fade-left" data-aos-delay="50" class="pattern-btn" style="background-color: #FFCAB3">
+                        <img src="./assets/pattern-samples/example_collage.svg">
+                        <p>Collage</p>
+                    </a>
+                    <a href="app/index.html?pattern=riseAndSet" data-aos="fade-left" data-aos-delay="100" class="pattern-btn"  style="background-color: #FFFFFF">
+                        <img src="./assets/pattern-samples/example_riseAndSet.svg">
+                        <p>Rise & Set</p>
+                    </a>
+                    <a href="app/index.html?pattern=hourGlass" data-aos="fade-left" data-aos-delay="150" class="pattern-btn" style="background-color: #796EFF">
+                        <img src="./assets/pattern-samples/example_hourGlass.svg">
+                        <p>Hour Glass</p>
+                    </a>
+                    <a href="app/index.html?pattern=circuits" data-aos="fade-left" data-aos-delay="200" class="pattern-btn" style="background-color: #F0F2F3">
+                        <img src="./assets/pattern-samples/example_circuits.svg">
+                        <p>Circuits</p>
+                    </a>
+                    <a href="app/index.html?pattern=dotGrid" data-aos="fade-left" data-aos-delay="250" class="pattern-btn" style="background-color: #FFCAB3">
+                        <img src="./assets/pattern-samples/example_dotGrid.svg">
+                        <p>Dot Grid</p>
+                    </a>
+                    <a href="app/index.html?pattern=stigma" data-aos="fade-left" data-aos-delay="300" class="pattern-btn" style="background-color: #F0F2F3">
+                        <img src="./assets/pattern-samples/example_stigma.svg">
+                        <p>Stigma</p>
+                    </a>
+                    <a href="app/index.html?pattern=modgePodge" data-aos="fade-left" data-aos-delay="350" class="pattern-btn" style="background-color: #9BE3AB">
+                        <img src="./assets/pattern-samples/example_modgePodge.svg">
+                        <p>Modge Podge</p>
+                    </a>
+                    <a href="app/index.html?pattern=squareGrid" data-aos="fade-left" data-aos-delay="400" class="pattern-btn" style="background-color: #4CC6B2">
+                        <img src="./assets/pattern-samples/example_squareGrid.svg">
+                        <p>Square Grid</p>
+                    </a>
+                    <a href="app/index.html?pattern=chiseled" data-aos="fade-left" data-aos-delay="450" class="pattern-btn" style="background-color: #3C4D66">
+                        <img src="./assets/pattern-samples/example_chiseled.svg">
+                        <p style="color: white;">Chiseled</p>
+                    </a>
+                    <a href="app/index.html?pattern=stairs" data-aos="fade-left" data-aos-delay="500" class="pattern-btn" style="background-color: #F1F0F2">
+                        <img src="./assets/pattern-samples/example_stairs.svg">
+                        <p>Stairs</p>
+                    </a>
+                    <a href="app/index.html?pattern=islands" data-aos="fade-left" data-aos-delay="550" class="pattern-btn" style="background-color: #65578E;">
+                        <img src="./assets/pattern-samples/example_islands.svg">
+                        <p style="color: white">Islands</p>
+                    </a>
+                    <a href="app/index.html?pattern=alienLanguage" data-aos="fade-left" data-aos-delay="600" class="pattern-btn" style="background-color: #F1F0F2;">
+                        <img src="./assets/pattern-samples/example_alienLanguage.svg">
+                        <p>Alien Language</p>
+                    </a>
+                    <a href="app/index.html?pattern=crossGrid" data-aos="fade-left" data-aos-delay="650" class="pattern-btn" style="background-color: #3C4D66;">
+                        <img src="./assets/pattern-samples/example_crossGrid.svg">
+                        <p style="color: white">Cross Grid</p>
+                    </a>
+                    <a href="app/index.html?pattern=confetti" data-aos="fade-left" data-aos-delay="700" class="pattern-btn" style="background-color: #65578E;">
+                        <img src="./assets/pattern-samples/example_confetti.svg">
+                        <p style="color: white">Confetti</p>
+                    </a>
+                    <a href="app/index.html?pattern=wallArt" data-aos="fade-left" data-aos-delay="750" class="pattern-btn" style="background-color: #F19A00;">
+                        <img src="./assets/pattern-samples/example_wallArt.svg">
+                        <p>Wall Art</p>
+                    </a>
+                    <a href="app/index.html?pattern=terrazzo" data-aos="fade-left" data-aos-delay="800" class="pattern-btn" style="background-color: #6E9E80;">
+                        <img src="./assets/pattern-samples/example_terrazzo.svg">
+                        <p>Terrazzo</p>
+                    </a>
+                    <a href="app/index.html?pattern=knickKnacks" data-aos="fade-left" data-aos-delay="850" class="pattern-btn" style="background-color: #D6CFB6;">
+                        <img src="./assets/pattern-samples/example_knickKnacks.svg">
+                        <p>Knick Knacks</p>
+                    </a>
+                    <a href="app/index.html?pattern=streamers" data-aos="fade-left" data-aos-delay="900" class="pattern-btn" style="background-color: #482728;">
+                        <img src="./assets/pattern-samples/example_streamers.svg">
+                        <p style="color:white;">Streamers</p>
+                    </a>
+                    <a href="app/index.html?pattern=chips" data-aos="fade-left" data-aos-delay="1000" class="pattern-btn" style="background-color: #F2A495;">
+                        <img src="./assets/pattern-samples/example_chips.svg">
+                        <p style="color:white;">Chips</p>
+                    </a>
+                    <a href="app/index.html?pattern=beacon" data-aos="fade-left" data-aos-delay="1050" class="pattern-btn" style="background-color: #FA9AD0;">
+                        <img src="./assets/pattern-samples/example_beacon.svg">
+                        <p>Beacon</p>
+                    </a>
+                    <a href="app/index.html?pattern=bauhaus1" data-aos="fade-left" data-aos-delay="1100" class="pattern-btn" style="background-color: #55C2FF;">
+                        <img src="./assets/pattern-samples/example_bauhaus1.svg">
+                        <p>Bauhaus 1</p>
+                    </a>
+                    <a href="app/index.html?pattern=bauhaus2" data-aos="fade-left" data-aos-delay="1150" class="pattern-btn" style="background-color: #383838;">
+                        <img src="./assets/pattern-samples/example_bauhaus2.svg">
+                        <p style="color: white;">Bauhaus 2</p>
+                    </a>
+                    <a href="app/index.html?pattern=deco" data-aos="fade-left" data-aos-delay="1200" class="pattern-btn" style="background-color: #EDF9FE;">
+                        <img src="./assets/pattern-samples/example_deco.svg">
+                        <p>Deco</p>
+                    </a>
+                    <a href="app/index.html?pattern=capsules" data-aos="fade-left" data-aos-delay="1250" class="pattern-btn" style="background-color: #55C2FF;">
+                        <img src="./assets/pattern-samples/example_capsules.svg">
+                        <p style="color: white;">Capsules</p>
+                    </a>
+                </div>
+            </div>
+            <h3 data-aos="fade" style="max-width: 400px">Select an artwork above to the launch app with that theme.</h3>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 data-aos="fade-up">Generate forever, adjust endlessly, and export to your heart’s content. All free.</h2>
+            <div class="feature-grid">
+                <div class="feature" data-aos="fade" data-aos-delay="0" data-aos-anchor=".feature-grid">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="none" viewBox="0 0 60 60">
+                        <path fill="#14AAF5" d="M20 47.5h20c1.375 0 2.5-1.125 2.5-2.5V12.5c0-1.375-1.125-2.5-2.5-2.5H20a2.507 2.507 0 00-2.5 2.5V45c0 1.375 1.125 2.5 2.5 2.5zm-12.5-5h5c1.375 0 2.5-1.125 2.5-2.5V17.5c0-1.375-1.125-2.5-2.5-2.5h-5A2.507 2.507 0 005 17.5V40c0 1.375 1.125 2.5 2.5 2.5zm37.5-25V40c0 1.375 1.125 2.5 2.5 2.5h5c1.375 0 2.5-1.125 2.5-2.5V17.5c0-1.375-1.125-2.5-2.5-2.5h-5a2.507 2.507 0 00-2.5 2.5z"/>
+                    </svg>
+                    <p>25 Themes Across 4 Categories</p>
+                </div>
+                <div class="feature" data-aos="fade" data-aos-delay="100" data-aos-anchor=".feature-grid">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="none" viewBox="0 0 60 60">
+                        <path fill="#FF5263" d="M30 5C16.225 5 5 16.225 5 30s11.225 25 25 25c3.45 0 6.25-2.8 6.25-6.25 0-1.525-.575-3-1.6-4.175-.2-.25-.325-.525-.325-.825 0-.7.55-1.25 1.25-1.25H40c8.275 0 15-6.725 15-15C55 15.1 43.775 5 30 5zm13.75 27.5A3.745 3.745 0 0140 28.75 3.745 3.745 0 0143.75 25a3.745 3.745 0 013.75 3.75 3.745 3.745 0 01-3.75 3.75zm-7.5-10a3.745 3.745 0 01-3.75-3.75A3.745 3.745 0 0136.25 15 3.745 3.745 0 0140 18.75a3.745 3.745 0 01-3.75 3.75zM12.5 28.75A3.745 3.745 0 0116.25 25 3.745 3.745 0 0120 28.75a3.745 3.745 0 01-3.75 3.75 3.745 3.745 0 01-3.75-3.75zm15-10a3.745 3.745 0 01-3.75 3.75A3.745 3.745 0 0120 18.75 3.745 3.745 0 0123.75 15a3.745 3.745 0 013.75 3.75z"/>
+                    </svg>
+                    <p>14 Curated Color Palettes</p>
+                </div>
+                <div class="feature" data-aos="fade" data-aos-delay="200">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="none" viewBox="0 0 60 60">
+                        <path fill="#FCBD01" d="M45 30a2.507 2.507 0 00-2.5 2.5v5h-5A2.507 2.507 0 0035 40c0 1.375 1.125 2.5 2.5 2.5H45c1.375 0 2.5-1.125 2.5-2.5v-7.5c0-1.375-1.125-2.5-2.5-2.5zm-27.5-7.5h5c1.375 0 2.5-1.125 2.5-2.5s-1.125-2.5-2.5-2.5H15a2.507 2.507 0 00-2.5 2.5v7.5c0 1.375 1.125 2.5 2.5 2.5s2.5-1.125 2.5-2.5v-5zm35-15h-45c-2.75 0-5 2.25-5 5v35c0 2.75 2.25 5 5 5h45c2.75 0 5-2.25 5-5v-35c0-2.75-2.25-5-5-5zM50 47.525H10a2.507 2.507 0 01-2.5-2.5v-30.05c0-1.375 1.125-2.5 2.5-2.5h40c1.375 0 2.5 1.125 2.5 2.5v30.05c0 1.375-1.125 2.5-2.5 2.5z"/>
+                    </svg>
+                    <p>Adjust Scale and Detail</p>
+                </div>
+                <div class="feature" data-aos="fade" data-aos-delay="300" data-aos-anchor=".feature-grid">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="none" viewBox="0 0 60 60">
+                        <path fill="#796EFF" d="M10 20h10V10H10v10zm15 30h10V40H25v10zM10 35h10V25H10v10zm15 0h10V25H25v10zm15-25v10h10V10H40zm0 25h10V25H40v10zm0 15h10V40H40v10z"/>
+                    </svg>
+                    <p>Adjust Density</p>
+                </div>
+                <div class="feature" data-aos="fade" data-aos-delay="400" data-aos-anchor=".feature-grid">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="none" viewBox="0 0 60 60">
+                        <path fill="#FFCAB3" d="M7.5 12.5h5v-5c-2.75 0-5 2.25-5 5zm0 20h5v-5h-5v5zm10 20h5v-5h-5v5zm-10-30h5v-5h-5v5zm25-15h-5v5h5v-5zm15 0v5h5c0-2.75-2.25-5-5-5zm-35 45v-5h-5c0 2.75 2.25 5 5 5zm-5-10h5v-5h-5v5zm15-35h-5v5h5v-5zm5 45h5v-5h-5v5zm20-20h5v-5h-5v5zm0 20c2.75 0 5-2.25 5-5h-5v5zm0-30h5v-5h-5v5zm0 20h5v-5h-5v5zm-10 10h5v-5h-5v5zm0-40h5v-5h-5v5zM20 42.5h20c1.375 0 2.5-1.125 2.5-2.5V20c0-1.375-1.125-2.5-2.5-2.5H20a2.507 2.507 0 00-2.5 2.5v20c0 1.375 1.125 2.5 2.5 2.5z"/>
+                    </svg>
+                    <p>Adjust Matte Color and Padding</p>
+                </div>
+                <div class="feature" data-aos="fade" data-aos-delay="500" data-aos-anchor=".feature-grid">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="none" viewBox="0 0 60 60">
+                        <path fill="#F0F2F3" d="M57.5 15V5c0-1.375-1.125-2.5-2.5-2.5H45A2.507 2.507 0 0042.5 5v2.5h-25V5c0-1.375-1.125-2.5-2.5-2.5H5A2.507 2.507 0 002.5 5v10c0 1.375 1.125 2.5 2.5 2.5h2.5v25H5A2.507 2.507 0 002.5 45v10c0 1.375 1.125 2.5 2.5 2.5h10c1.375 0 2.5-1.125 2.5-2.5v-2.5h25V55c0 1.375 1.125 2.5 2.5 2.5h10c1.375 0 2.5-1.125 2.5-2.5V45c0-1.375-1.125-2.5-2.5-2.5h-2.5v-25H55c1.375 0 2.5-1.125 2.5-2.5zm-50-7.5h5v5h-5v-5zm5 45h-5v-5h5v5zm30-5h-25V45c0-1.375-1.125-2.5-2.5-2.5h-2.5v-25H15c1.375 0 2.5-1.125 2.5-2.5v-2.5h25V15c0 1.375 1.125 2.5 2.5 2.5h2.5v25H45a2.507 2.507 0 00-2.5 2.5v2.5zm10 5h-5v-5h5v5zm-5-40v-5h5v5h-5zm-15.15 6.625a2.55 2.55 0 00-2.375-1.625c-1.05 0-2 .65-2.35 1.625L20.7 37.45A1.873 1.873 0 0022.45 40c.8 0 1.5-.5 1.775-1.25L25.6 35h8.725l1.4 3.775A1.9 1.9 0 0037.5 40h.025c1.325 0 2.225-1.325 1.775-2.55l-6.95-18.325zM26.725 31.85L30 22.275l3.25 9.575h-6.525z"/>
+                    </svg>
+                    <p>Export to SVG or PNG</p>
+                </div>
+                <div class="feature" data-aos="fade" data-aos-delay="600" data-aos-anchor=".feature-grid">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="none" viewBox="0 0 60 60">
+                        <path fill="#14AAF5" d="M29.998 12.5V5.523c0-1.125-1.35-1.675-2.125-.875l-9.5 9.475c-.5.5-.5 1.275 0 1.775l9.475 9.475c.8.775 2.15.225 2.15-.9V17.5c9.325 0 16.7 8.55 14.65 18.225-1.175 5.675-5.775 10.25-11.425 11.425-8.925 1.875-16.875-4.25-18.075-12.525a2.498 2.498 0 00-2.45-2.125c-1.5 0-2.7 1.325-2.5 2.825 1.55 10.975 12 19.1 23.825 16.8 7.8-1.525 14.075-7.8 15.6-15.6C52.098 23.7 42.348 12.5 29.998 12.5z"/>
+                    </svg>
+                    <p>Regenerate Endlessly with One Click</p>
+                </div>
+                <div class="feature" data-aos="fade" data-aos-delay="700" data-aos-anchor=".feature-grid">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="none" viewBox="0 0 60 60">
+                        <path fill="#FF5263" d="M53.525 28.95l-22.5-22.5c-.9-.9-2.15-1.45-3.525-1.45H10c-2.75 0-5 2.25-5 5v17.5a4.99 4.99 0 001.475 3.55l22.5 22.5c.9.9 2.15 1.45 3.525 1.45s2.625-.55 3.525-1.475l17.5-17.5A4.888 4.888 0 0055 32.5a5.05 5.05 0 00-1.475-3.55zM13.75 17.5A3.745 3.745 0 0110 13.75 3.745 3.745 0 0113.75 10a3.745 3.745 0 013.75 3.75 3.745 3.745 0 01-3.75 3.75zm29.425 20.675l-9.8 9.8c-.5.5-1.275.5-1.775 0l-9.8-9.8a6.325 6.325 0 01-1.675-5.85c.475-2.2 2.225-4.025 4.4-4.6 2.35-.625 4.625.1 6.1 1.625l1.875 1.8 1.825-1.825A6.255 6.255 0 0138.75 27.5c3.45 0 6.25 2.8 6.25 6.25 0 1.725-.7 3.3-1.825 4.425z"/>
+                    </svg>
+                    <p>It's Free!</p>
+                </div>
+            </div>
+            <h3 data-aos="fade"  data-aos-anchor=".feature-grid">And by free, we mean free.</h3>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <hr data-aos="hr" data-aos-duration="2000" />
+        </div>
+    </section>
+
+    <section id="footer">
+        <div class="container">
+            <h1 data-aos="fade" data-aos-anchor="#footer" data-aos-duration="1600">We mentioned it was free right? Start generating artwork!</h1>
+            <a data-aos="fade" data-aos-duration="2300" data-aos-easing="ease" data-aos-anchor="#footer" data-aos-delay="500" href="app/index.html" class="button primary">Launch App</a>
+        </div>
+    </section>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            ease: "ease-out",
+            disable: 'mobile'
+        });
+    </script>
+
 </body>
 
 </html>
