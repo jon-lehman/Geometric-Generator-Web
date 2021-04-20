@@ -326,7 +326,8 @@ input[type=range]::-webkit-slider-runnable-track {
   padding-top: 0px;
 }
 
-.faux-mobile-divider {
+.faux-mobile-divider,
+.mobile-export-message {
   display: none;
 }
 
@@ -558,6 +559,11 @@ svg {
     height: 1px;
     border-top: 1px solid var(--light-black);
     margin-bottom:10px;
+  }
+  .mobile-export-message {
+    display: block;
+    margin-top: 10px;
+    opacity: .75;
   }
   #format .custom-select-options {
     margin-top: -270px;
